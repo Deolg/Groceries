@@ -7,8 +7,9 @@ import {
     animate,
     keyframes,
     style,
-    group
+    group,
 } from "@angular/core";
+//import {bootbox } from "bootbox"
 
 @Component({
     moduleId: module.id,
@@ -36,6 +37,7 @@ import {
 
 export class GroceriesComponent {
 
+    public bootbox:any;
     public defaultData=[
         {"title":"Category 1","type":0},
         {"title":"Category 2","type":1},
