@@ -1,0 +1,40 @@
+<div id="content">
+    <div id="head">
+        <div class="status-bar"></div>
+
+        <div *ngIf="!modeEdit" class="control-bar">
+            <div class="settings" (click)="onResetData()"  alt="Сбросить Данные"></div>
+            <div class="title">Groceries</div>
+            <div class="edit" (click)="onModeEdit()"></div>
+        </div>
+
+        <div *ngIf="modeEdit" class="control-bar-edit">
+            <div (click)="onAddItem()" class="add"></div>
+            <div class="title">Groceries</div>
+            <div class="done" (click)="onModeEdit()">done</div>
+        </div>
+
+    </div>
+
+    <div *ngIf="!modeEdit" id='list'>
+        <div *ngFor='let value of Orders; let i = index' [hidden]="filter && !value.type"  [class]="!value.type?' item-list home':'item-list' ">
+
+            <div class="title">{{value.title}}</div>
+            <div [@focusPanel]='state' (click)="onToggleMove(i)"  class="status"></div>
+        </div>
+    </div>
+
+    <div *ngIf="modeEdit" id='listEdit'>
+        <div class="item-list-edid"  *ngFor='let value of Orders; let i = index' [hidden]="filter && !value.type" >
+            <div class="remove" (click)="onRemoveItem(i)"></div>
+            <div class="title">{{value.title}}</div>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <div (click)="onFilter(false)" [class]="!filter?' list active':'list' "></div>
+        <div (click)="onFilter(true)"  [class]="filter ?' car active':'car' "></div>
+    </div>
+</div>
+
