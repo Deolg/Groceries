@@ -47,14 +47,11 @@ var GroceriesComponent = (function () {
         this.modeEdit = (this.modeEdit) ? false : true;
     };
     GroceriesComponent.prototype.onRemoveItem = function (index) {
-        console.log(this.Orders);
         this.Orders.splice(index, 1);
-        console.log(this.Orders);
         this._setDefaultData();
     };
     GroceriesComponent.prototype.onAddItem = function () {
         var _this = this;
-        console.log(bootbox);
         bootbox.prompt("Add new list item", function (res) {
             if (res === null)
                 return;
