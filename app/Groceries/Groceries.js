@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-//import {bootbox } from "bootbox"
 var GroceriesComponent = (function () {
     function GroceriesComponent() {
         this.defaultData = [
@@ -55,6 +54,7 @@ var GroceriesComponent = (function () {
     };
     GroceriesComponent.prototype.onAddItem = function () {
         var _this = this;
+        console.log(bootbox);
         bootbox.prompt("Add new list item", function (res) {
             if (res === null)
                 return;

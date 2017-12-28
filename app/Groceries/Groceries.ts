@@ -9,7 +9,6 @@ import {
     style,
     group,
 } from "@angular/core";
-//import {bootbox } from "bootbox"
 
 @Component({
     moduleId: module.id,
@@ -37,7 +36,6 @@ import {
 
 export class GroceriesComponent {
 
-    public bootbox:any;
     public defaultData=[
         {"title":"Category 1","type":0},
         {"title":"Category 2","type":1},
@@ -81,14 +79,11 @@ export class GroceriesComponent {
     }
     
     onRemoveItem(index):void{
-        console.log(this.Orders);
         this.Orders.splice(index, 1);
-        console.log(this.Orders);
         this._setDefaultData();
     }
 
     onAddItem():void{
-
         bootbox.prompt("Add new list item",(res)=>{
             if(res===null) return;
             if(res.trim() == '') return bootbox.alert('Поле не может быть пустым');
